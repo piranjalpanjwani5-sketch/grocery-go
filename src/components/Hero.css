@@ -1,0 +1,75 @@
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 8%;
+  background: linear-gradient(135deg, #e8f5e9, #ffffff);
+  min-height: 90vh;
+}
+
+.hero-text {
+  width: 50%;
+}
+
+.offer {
+  display: inline-block;
+  background: #22c55e;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.hero-text h1 {
+  font-size: 60px;
+  color: #222;
+  line-height: 1.2;
+}
+
+.hero-text h1 span {
+  color: #22c55e;
+}
+
+.hero-text p {
+  font-size: 20px;
+  color: #666;
+  margin: 25px 0;
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.shop-btn {
+  background: #22c55e;
+  color: white;
+  padding: 15px 35px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.learn-btn {
+  background: white;
+  color: #22c55e;
+  border: 2px solid #22c55e;
+  padding: 15px 35px;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.hero-image {
+  width: 45%;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 25px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
