@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import Deals from "./components/Deals";
 import Categories from "./components/Categories";
 import Products from "./components/Products";
 import Footer from "./components/Footer";
@@ -26,12 +27,38 @@ function App() {
           path="/"
           element={
             <>
-              <Hero />
+              {search.trim() === "" ? (
+                <>
+                  <Hero />
 
-              <Categories
-                category={category}
-                setCategory={setCategory}
-              />
+                  <Deals />
+
+                  <Categories
+                    category={category}
+                    setCategory={setCategory}
+                  />
+                </>
+              ) : (
+                <section
+                  style={{
+                    padding: "40px 20px",
+                    textAlign: "center",
+                  }}
+                >
+                  <h2
+                    style={{
+                      fontSize: "32px",
+                      color: "#16a34a",
+                    }}
+                  >
+                    🔍 Search Results
+                  </h2>
+
+                  <p>
+                    Showing results for <b>"{search}"</b>
+                  </p>
+                </section>
+              )}
 
               <Products
                 search={search}

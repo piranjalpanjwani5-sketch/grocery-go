@@ -1,0 +1,42 @@
+.deals {
+  padding: 60px 8%;
+  text-align: center;
+  background: #f8fff8;
+}
+
+.deals h2 {
+  font-size: 34px;
+  color: #16a34a;
+  margin-bottom: 40px;
+}
+
+.deals-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.deal-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  transition: .3s;
+}
+
+.deal-card:hover {
+  transform: translateY(-8px);
+}
+
+.emoji {
+  font-size: 60px;
+}
+
+.deal-card h3 {
+  margin: 15px 0;
+}
+
+.deal-card p {
+  color: #16a34a;
+  font-weight: bold;
+}
