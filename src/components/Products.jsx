@@ -3,12 +3,19 @@ import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import products from "../data/products";
 
-function Products({ search }) {
+function Products({ search, category }) {
   const { addToCart } = useContext(CartContext);
 
-  const filteredProducts = products.filter((product) =>
-    product.name.toLowerCase().includes(search.toLowerCase())
-  );
+  const filteredProducts = products.filter((product) => {
+    const matchSearch = product.name
+      .toLowerCase()
+      .includes(search.toLowerCase());
+
+    const matchCategory =
+      category === "All" || product.category === category;
+
+    return matchSearch && matchCategory;
+  });
 
   return (
     <section className="products">

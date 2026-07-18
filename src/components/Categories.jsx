@@ -1,13 +1,13 @@
 import "./Categories.css";
 
-function Categories() {
+function Categories({ category, setCategory }) {
   const categories = [
-    "🍎 Fruits",
-    "🥦 Vegetables",
-    "🥛 Dairy",
-    "🥤 Beverages",
-    "🍪 Snacks",
-    "🍚 Grocery"
+    { name: "All", icon: "🛒" },
+    { name: "Fruits", icon: "🍎" },
+    { name: "Vegetables", icon: "🥦" },
+    { name: "Dairy", icon: "🥛" },
+    { name: "Beverages", icon: "🥤" },
+    { name: "Bakery", icon: "🍞" },
   ];
 
   return (
@@ -15,10 +15,17 @@ function Categories() {
       <h2>Shop by Category</h2>
 
       <div className="category-container">
-        {categories.map((item, index) => (
-          <div className="category-card" key={index}>
-            {item}
-          </div>
+        {categories.map((item) => (
+          <button
+            key={item.name}
+            className={`category-card ${
+              category === item.name ? "active" : ""
+            }`}
+            onClick={() => setCategory(item.name)}
+          >
+            <span>{item.icon}</span>
+            <p>{item.name}</p>
+          </button>
         ))}
       </div>
     </section>
