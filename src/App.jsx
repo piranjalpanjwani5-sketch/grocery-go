@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
+import OrderSuccess from "./pages/OrderSuccess";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -71,6 +72,11 @@ function App() {
         <Route
           path="/cart"
           element={<Cart />}
+        />
+
+        <Route
+         path="/order-success"
+         element={<OrderSuccess />}
         />
 
         <Route
