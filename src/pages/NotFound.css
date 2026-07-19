@@ -1,0 +1,72 @@
+.not-found {
+
+  min-height: 70vh;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  align-items:center;
+
+  text-align:center;
+
+  padding:40px;
+
+}
+
+
+.not-found h1 {
+
+  font-size:120px;
+
+  color:#22c55e;
+
+  margin:0;
+
+}
+
+
+.not-found h2 {
+
+  font-size:35px;
+
+  margin:10px;
+
+}
+
+
+.not-found p {
+
+  color:#666;
+
+  margin-bottom:30px;
+
+}
+
+
+.not-found button {
+
+  padding:14px 35px;
+
+  background:#22c55e;
+
+  color:white;
+
+  border:none;
+
+  border-radius:10px;
+
+  font-size:17px;
+
+  cursor:pointer;
+
+}
+
+
+.not-found button:hover {
+
+  background:#166534;
+
+}

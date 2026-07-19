@@ -1,20 +1,28 @@
 import "./Navbar.css";
-import { FaShoppingCart, FaSearch } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import { useContext } from "react";
+import {
+  FaShoppingCart,
+  FaSearch,
+  FaBars,
+  FaTimes,
+} from "react-icons/fa";
+
+import { Link, NavLink } from "react-router-dom";
+import { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
 
 function Navbar({ search, setSearch }) {
   const { cart } = useContext(CartContext);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+  const totalItems = cart.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
 
   return (
     <nav className="navbar">
-      <Link
-        to="/"
-        style={{ textDecoration: "none", color: "inherit" }}
-      >
+
+      <Link to="/" className="logo-link">
         <div className="logo">🛒 Grocery Go</div>
       </Link>
 
@@ -29,27 +37,38 @@ function Navbar({ search, setSearch }) {
         />
       </div>
 
-      <ul className="nav-links">
+      <div
+        className="menu-icon"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        {menuOpen ? <FaTimes /> : <FaBars />}
+      </div>
+
+      <ul className={menuOpen ? "nav-links active" : "nav-links"}>
+
         <li>
-          <Link to="/">Home</Link>
+          <NavLink to="/">Home</NavLink>
         </li>
 
-        <li>Products</li>
+        <li>
+          <NavLink to="/shop">Shop</NavLink>
+        </li>
 
-        <li>Categories</li>
+        <li>
+          <NavLink to="/about">About</NavLink>
+        </li>
 
-        <li>Contact</li>
+        <li>
+          <NavLink to="/contact">Contact</NavLink>
+        </li>
+
       </ul>
 
-      <Link
-        to="/cart"
-        style={{ textDecoration: "none", color: "inherit" }}
-      >
-        <div className="cart">
-          <FaShoppingCart />
-          <span>{totalItems}</span>
-        </div>
+      <Link to="/cart" className="cart">
+        <FaShoppingCart />
+        <span>{totalItems}</span>
       </Link>
+
     </nav>
   );
 }
