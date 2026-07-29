@@ -1,6 +1,6 @@
 import "./Products.css";
 import { useState } from "react";
-import products from "../data/products";
+import products from "../data/Products";
 import ProductCard from "./ProductCard";
 
 function Products({ search, category }) {
